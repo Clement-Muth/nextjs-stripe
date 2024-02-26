@@ -1,0 +1,26 @@
+{
+  "editor.defaultFormatter": "rome.rome",
+  "editor.codeActionsOnSave": {
+    "quickfix.rome": "explicit",
+    "source.organizeImports.rome": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "rome.rome"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "rome.rome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "rome.rome"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "rome.rome"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "rome.rome"
+  },
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  }
+}
