@@ -1,10 +1,13 @@
 "use server";
 
 import { cache } from "react";
+import Stripe from "stripe";
 import stripeClient from "~/libraries/stripe/Stripe";
 import PaymentMethod, { Brand } from "~/types/stripe/PaymentMethod";
 
-const getPaymentMethods = cache(async (clientId: string): Promise<PaymentMethod[] | null> => {
+const getPaymentMethods = cache(async (clientId?: string): Promise<PaymentMethod[] | null> => {
+  if (!clientId) throw new Stripe.errors.StripeError({ type: "api_error", code: "no_customer" });
+
   const cards = (await stripeClient().customers.listPaymentMethods(clientId))?.data.map((card) => ({
     ...card,
     ...card.card,
@@ -14,7 +17,7 @@ const getPaymentMethods = cache(async (clientId: string): Promise<PaymentMethod[
 
   if (!cards) return null;
 
-  return cards.map((card) => ({
+  const clientCards = cards.map((card) => ({
     paymentMethodId: card.id,
     fingerprint: card.fingerprint!,
     name: card.name,
@@ -33,6 +36,8 @@ const getPaymentMethods = cache(async (clientId: string): Promise<PaymentMethod[
     },
     brand: card.brand as Brand
   }));
+
+  return clientCards.length ? clientCards : null;
 });
 
 export default getPaymentMethods;

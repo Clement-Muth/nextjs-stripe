@@ -1,5 +1,6 @@
 "use server";
 
+import { cookies } from "next/headers";
 import stripeClient from "~/libraries/stripe/Stripe";
 
 class Client {
@@ -19,6 +20,7 @@ const createNewClient = async (params: ParamsProps): Promise<Client> => {
     email: params.email
   });
 
+  cookies().set("clientId", customer.id);
   return { clientId: customer.id };
 };
 

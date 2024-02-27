@@ -1,5 +1,5 @@
 import { Card, CardBody, CardFooter, CardHeader, Image, ScrollShadow } from "@nextui-org/react";
-import getPaymentMethods from "~/app/get-payment-methods/api/getPaymentMethods";
+import getPaymentMethods from "~/app/api/getPaymentMethods";
 import Mastercard from "/public/cards/brands/mastercard.svg";
 import AmericanExpress from "/public/cards/brands/american-express.svg";
 import Visa from "/public/cards/brands/visa.svg";
@@ -8,12 +8,15 @@ import DinersClub from "/public/cards/brands/diners-club.svg";
 import Jcb from "/public/cards/brands/jcb.svg";
 import UnionPay from "/public/cards/brands/unionpay.svg";
 import NextImage from "next/image";
+import PageContainer from "~/components/PageContainer/PageContainer";
+import { cookies } from "next/headers";
+import NoCards from "~/app/(stripe)/get-payment-methods/views/NoCards";
 
 const AddPaymentMethodPage = async () => {
-  const paymentMethods = await getPaymentMethods("cus_Pbe2kpjgnWl3pR");
+  const paymentMethods = await getPaymentMethods(cookies().get("clientId")?.value);
 
   return (
-    <main className="flex flex-col justify-center items-center min-h-screen gap-y-10">
+    <PageContainer>
       <h1 className="font-bold text-3xl">My payment methods</h1>
       <ScrollShadow orientation="horizontal" className="flex gap-5 max-w-2xl p-5" hideScrollBar>
         {paymentMethods?.map((paymentMethod, i) => (
@@ -53,9 +56,9 @@ const AddPaymentMethodPage = async () => {
               />
             </CardFooter>
           </Card>
-        )) ?? <p>No card added</p>}
+        )) ?? <NoCards />}
       </ScrollShadow>
-    </main>
+    </PageContainer>
   );
 };
 
