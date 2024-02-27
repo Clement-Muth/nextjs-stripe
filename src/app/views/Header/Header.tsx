@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import getClient from "~/app/api/getClient";
-import DeleteClient from "~/core/DeleteClient";
+import HeaderContent from "~/app/views/Header/HeaderContent";
 
 const Header = async () => {
   let client;
@@ -11,11 +11,7 @@ const Header = async () => {
     client = null;
   }
 
-  return (
-    <header className="flex w-full h-16 items-center justify-end px-12">
-      <DeleteClient clientId={client?.id} />
-    </header>
-  );
+  return <HeaderContent clientId={client?.id} />;
 };
 
 export default Header;

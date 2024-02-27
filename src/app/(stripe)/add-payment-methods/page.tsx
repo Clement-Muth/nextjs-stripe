@@ -1,5 +1,5 @@
 import { cookies } from "next/headers";
-import AddPaymentMethodForm from "~/app/(stripe)/add-payment-methods/views/Form";
+import AddPaymentMethods from "~/app/(stripe)/add-payment-methods/views";
 import getClient from "~/app/api/getClient";
 import PageContainer from "~/components/PageContainer/PageContainer";
 import ElementsProvider from "~/libraries/stripe/ElementsProvider";
@@ -11,7 +11,7 @@ const AddPaymentMethodPage = async () => {
     <PageContainer>
       <h1 className="font-bold text-3xl">Add your payment method</h1>
       <ElementsProvider>
-        <AddPaymentMethodForm clientId={clientId.id} />
+        <AddPaymentMethods clientId={clientId.id} />
       </ElementsProvider>
     </PageContainer>
   );
