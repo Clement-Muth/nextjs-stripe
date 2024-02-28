@@ -11,7 +11,7 @@ const DeleteClient = ({ clientId }: DeleteClientProps) => {
   return (
     <Button
       color={!clientId ? "default" : "primary"}
-      size="sm"
+      size="md"
       disabled={!clientId}
       isDisabled={!clientId}
       onClick={() => {
