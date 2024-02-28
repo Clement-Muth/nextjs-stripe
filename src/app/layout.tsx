@@ -26,7 +26,6 @@ export default function RootLayout({
             <div className="grid grid-cols-[256px_1fr_256px] max-w-[1280px] px-6 w-full">
               <Aside />
               {children}
-              <Aside />
             </div>
           </div>
         </ApplicationKernel>

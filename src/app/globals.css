@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom,
@@ -13,10 +17,6 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-}
-
-main {
-  @apply !h-[calc(100dvh-64px)]
 }
 
 .StripeElement {
