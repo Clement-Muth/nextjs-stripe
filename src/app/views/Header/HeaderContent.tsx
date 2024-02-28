@@ -13,6 +13,7 @@ export interface HeaderContentProps {
 const HeaderContent = ({ clientId }: HeaderContentProps) => {
   return (
     <Navbar
+      className="[&>header]:max-w-[1280px]"
       classNames={{
         item: [
           "flex",
