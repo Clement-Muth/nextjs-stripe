@@ -4,7 +4,7 @@ import ChevronDown from "~/components/Icons/chevronDown";
 
 const HeaderMenu = () => {
   return (
-    <NavbarItem>
+    <>
       <Dropdown>
         <NavbarItem>
           <DropdownTrigger>
@@ -146,7 +146,7 @@ const HeaderMenu = () => {
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>
-    </NavbarItem>
+    </>
   );
 };
 

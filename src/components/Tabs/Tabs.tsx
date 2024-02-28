@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useMemo } from "react";
+import { ReactNode } from "react";
 import { Tab, Tabs as NextTabs } from "@nextui-org/tabs";
 import onDark from "react-syntax-highlighter/dist/esm/styles/prism/vsc-dark-plus";
 import { Prism } from "react-syntax-highlighter";
@@ -16,7 +16,12 @@ const Tabs = ({ children, code }: TabsProps) => {
       <Tab key="form" title="Preview">
         {children}
       </Tab>
-      <Tab key="code" title="Code" aria-label="Code demo tabs" className="max-h-[50vh]">
+      <Tab
+        key="code"
+        title="Code"
+        aria-label="Code demo tabs"
+        className="max-h-[50vh] [&>pre]:max-w-[592px] [&>pre]:max-h-[500px] [&>pre]:!overflow-x-auto"
+      >
         <Prism language="typescript" className="h-full rounded-lg !bg-[rgb(14_12_12)]" style={onDark}>
           {code}
         </Prism>

@@ -12,7 +12,7 @@ export interface FormProps {
 
 const Form = ({ onSubmit, children, isLoading, submitted, onClick, buttonTitle, ...props }: FormProps) => {
   return (
-    <Card className="w-full max-w-lg">
+    <Card className="w-full">
       <form data-form-type="payment" onSubmit={onSubmit} {...props}>
         <CardBody className="p-6 gap-y-4">
           {children}

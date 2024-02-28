@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import ApplicationKernel from "~/core/ApplicationKernel";
 import Header from "~/app/views/Header/Header";
+import Aside from "~/app/views/Aside";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,13 @@ export default function RootLayout({
       <body className={inter.className} suppressHydrationWarning>
         <ApplicationKernel>
           <Header />
-          {children}
+          <div className="flex justify-center w-full">
+            <div className="grid grid-cols-[256px_1fr_256px] max-w-[1280px] px-6 w-full">
+              <Aside />
+              {children}
+              <Aside />
+            </div>
+          </div>
         </ApplicationKernel>
       </body>
     </html>
