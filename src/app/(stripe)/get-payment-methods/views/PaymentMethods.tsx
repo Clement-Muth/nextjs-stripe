@@ -14,7 +14,7 @@ export interface PaymentMethodsProps {
   paymentMethods: PaymentMethod[] | null;
 }
 
-const PaymentMethods = memo(({ paymentMethods }: PaymentMethodsProps) => {
+const PaymentMethods = ({ paymentMethods }: PaymentMethodsProps) => {
   return (
     <ScrollShadow orientation="horizontal" className="flex gap-5 max-w-2xl p-5" hideScrollBar>
       {paymentMethods?.map((paymentMethod, i) => (
@@ -57,6 +57,6 @@ const PaymentMethods = memo(({ paymentMethods }: PaymentMethodsProps) => {
       )) ?? <p>No card added</p>}
     </ScrollShadow>
   );
-});
+};
 
 export default PaymentMethods;
