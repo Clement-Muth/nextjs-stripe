@@ -1,6 +1,6 @@
 import { Link } from "@nextui-org/react";
-import AddPaymentMethodForm from "~/app/(stripe)/add-payment-methods/views/Form";
-import codeAddPaymentMethod from "~/app/(stripe)/add-payment-methods/views/code";
+import AddPaymentMethodForm from "~/app/stripe-payment/payment-methods/create/views/Form";
+import codeAddPaymentMethod from "~/app/stripe-payment/payment-methods/create/views/code";
 import Tabs from "~/components/Tabs/Tabs";
 
 export interface AddPaymentMethodsProps {

@@ -3,7 +3,7 @@
 import { Button } from "@nextui-org/button";
 import { Link } from "@nextui-org/link";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/navbar";
-import HeaderMenu from "~/app/views/Header/HeaderMenu";
+import NextLink from "next/link";
 import DeleteClient from "~/core/DeleteClient";
 
 export interface HeaderContentProps {
@@ -36,8 +36,13 @@ const HeaderContent = ({ clientId }: HeaderContentProps) => {
           Nextjs Stripe
         </Link>
       </NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4" justify="start">
-        <HeaderMenu />
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarItem key="add payment method" href="/stripe-payment/payment-methods/create" as={NextLink}>
+          Stripe Payment
+        </NavbarItem>
+        <NavbarItem key="list_payment_methods" href="/stripe-connect" as={NextLink}>
+          Stripe Connect
+        </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem>

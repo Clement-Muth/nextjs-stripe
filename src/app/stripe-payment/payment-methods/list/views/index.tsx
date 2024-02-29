@@ -1,7 +1,7 @@
-import PaymentMethods from "~/app/(stripe)/get-payment-methods/views/PaymentMethods";
 import PaymentMethod from "~/types/stripe/PaymentMethod";
-import codeGetPaymentMethods from "~/app/(stripe)/get-payment-methods/views/code";
 import Tabs from "~/components/Tabs/Tabs";
+import PaymentMethods from "~/app/stripe-payment/payment-methods/list/views/PaymentMethods";
+import codeGetPaymentMethods from "~/app/stripe-payment/payment-methods/list/views/code";
 
 export interface GetPaymentMethodsProps {
   paymentMethods: PaymentMethod[] | null;

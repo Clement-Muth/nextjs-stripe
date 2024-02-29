@@ -26,7 +26,7 @@ import {
 import NextImage from "next/image";
 import PaymentMethod from "~/types/stripe/PaymentMethod";
 import deletePaymentMethod from "~/app/api/deletePaymentMethod";
-import { DeleteIcon } from "~/app/(stripe)/delete-payment-methods/views/DeleteIcon";
+import { DeleteIcon } from "~/app/stripe-payment/payment-methods/delete/views/DeleteIcon";
 
 export interface TableProps {
   paymentMethods: PaymentMethod[] | null;
