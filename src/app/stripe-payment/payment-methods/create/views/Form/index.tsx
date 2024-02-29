@@ -10,8 +10,8 @@ import {
 } from "@stripe/react-stripe-js";
 import { useRouter } from "next/navigation";
 import { useMemo, useState, useTransition } from "react";
-import countries from "~/app/(stripe)/add-payment-methods/views/Form/countries";
-import newPaymentMethod from "~/app/(stripe)/add-payment-methods/views/Form/newPaymentMethod";
+import countries from "~/app/stripe-payment/payment-methods/create/views/Form/countries";
+import newPaymentMethod from "~/app/stripe-payment/payment-methods/create/views/Form/newPaymentMethod";
 import Form from "~/components/Form/Form";
 
 interface AddPaymentMethodFormProps {

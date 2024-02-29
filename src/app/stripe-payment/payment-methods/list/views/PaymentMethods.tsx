@@ -8,7 +8,6 @@ import Jcb from "/public/cards/brands/jcb.svg";
 import UnionPay from "/public/cards/brands/unionpay.svg";
 import NextImage from "next/image";
 import PaymentMethod from "~/types/stripe/PaymentMethod";
-import { memo } from "react";
 
 export interface PaymentMethodsProps {
   paymentMethods: PaymentMethod[] | null;

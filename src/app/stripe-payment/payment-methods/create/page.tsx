@@ -1,12 +1,12 @@
 import { Button, Divider, Link } from "@nextui-org/react";
 import { cookies } from "next/headers";
-import AddPaymentMethods from "~/app/(stripe)/add-payment-methods/views";
 import getClient from "~/app/api/getClient";
-import Chapter from "~/app/views/Chapter/Chapter";
 import PageContainer from "~/components/PageContainer/PageContainer";
 import ElementsProvider from "~/libraries/stripe/ElementsProvider";
 import onDark from "react-syntax-highlighter/dist/esm/styles/prism/vsc-dark-plus";
 import { Prism } from "react-syntax-highlighter";
+import AddPaymentMethods from "~/app/stripe-payment/payment-methods/create/views";
+import Chapter from "~/app/stripe-payment/views/Chapter/Chapter";
 
 const AddPaymentMethodPage = async () => {
   const clientId = await getClient(cookies().get("clientId")?.value);

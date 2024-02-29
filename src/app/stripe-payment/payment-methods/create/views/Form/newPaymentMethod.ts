@@ -1,8 +1,8 @@
 import { Stripe, StripeCardNumberElement } from "@stripe/stripe-js";
 import StripeError from "stripe";
-import createPaymentMethod from "~/app/(stripe)/add-payment-methods/views/Form/createPaymentMethod";
 import attachPaymentMethod from "~/app/api/attachPaymentMethod";
 import createNewClient from "~/app/api/createNewClient";
+import createPaymentMethod from "~/app/stripe-payment/payment-methods/create/views/Form/createPaymentMethod";
 import FormError from "~/core/FormError";
 import StripeErr from "~/libraries/stripe/stripeError";
 
