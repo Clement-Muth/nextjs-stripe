@@ -1,4 +1,6 @@
-import { ReactNode } from "react";
+"use client";
+
+import { ReactNode, useEffect } from "react";
 import Aside from "~/app/stripe-payment/views/Aside";
 
 export interface LayoutProps {
@@ -6,12 +8,11 @@ export interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  return (
-    <div className="grid grid-cols-[256px_1fr_256px]">
-      <Aside />
-      {children}
-    </div>
-  );
+  useEffect(() => {
+    console.log("layout changed");
+  }, []);
+
+  return <div className="grid lg:grid-cols-[256px_1fr] xl:grid-cols-[256px_1fr_256px]">{children}</div>;
 };
 
 export default Layout;

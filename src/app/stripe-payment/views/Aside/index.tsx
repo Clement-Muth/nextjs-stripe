@@ -10,7 +10,7 @@ const Aside = () => {
   return (
     <ScrollShadow
       orientation="vertical"
-      className="flex h-[calc(100dvh-128px)] sticky top-[64px] w-[256px] pt-5"
+      className="hidden lg:flex h-[calc(100dvh-128px)] sticky top-[64px] w-[256px] pt-5"
     >
       <Accordion
         showDivider={false}

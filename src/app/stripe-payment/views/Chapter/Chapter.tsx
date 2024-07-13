@@ -12,7 +12,7 @@ const Chapter = ({ items }: ChapterProps) => {
   return (
     <ScrollShadow
       orientation="vertical"
-      className="flex flex-col h-[calc(100dvh-128px)] sticky top-[64px] w-[256px] pt-5"
+      className="hidden xl:flex flex-col h-[calc(100dvh-128px)] sticky top-[64px] w-[256px] pt-5"
     >
       <nav className="pl-2 pb-2">
         <ul className="flex flex-col gap-y-4">

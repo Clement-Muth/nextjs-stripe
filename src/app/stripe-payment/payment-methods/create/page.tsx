@@ -3,8 +3,6 @@ import { cookies } from "next/headers";
 import getClient from "~/app/api/getClient";
 import PageContainer from "~/components/PageContainer/PageContainer";
 import ElementsProvider from "~/libraries/stripe/ElementsProvider";
-import onDark from "react-syntax-highlighter/dist/esm/styles/prism/vsc-dark-plus";
-import { Prism } from "react-syntax-highlighter";
 import AddPaymentMethods from "~/app/stripe-payment/payment-methods/create/views";
 import Chapter from "~/app/stripe-payment/views/Chapter/Chapter";
 
@@ -79,38 +77,7 @@ const AddPaymentMethodPage = async () => {
         <ElementsProvider>
           <AddPaymentMethods clientId={clientId.id} />
         </ElementsProvider>
-        <section>
-          <h3 id="attach" data-id="attach" data-level={1} data-name="Attach" className="mb-4">
-            <Link href="#attach" className="text-xl font-semibold">
-              Attach
-            </Link>
-          </h3>
-          <Prism language="typescript" className="h-fit rounded-lg !bg-[rgb(14_12_12)]" style={onDark}>
-            {`await stripeClient().paymentMethods.attach(params.paymentMethodId, {
-    customer: params.customerId
-  });`}
-          </Prism>
-        </section>
-        <section>
-          <h3 id="retrieve" data-id="retrieve" data-level={1} data-name="Retrieve" className="mb-4">
-            <Link href="#retrieve" className="text-xl font-semibold">
-              Retrieve
-            </Link>
-          </h3>
-          <Prism language="typescript" className="h-fit rounded-lg !bg-[rgb(14_12_12)]" style={onDark}>
-            {`await stripeClient().paymentMethods.attach(params.paymentMethodId, {
-    customer: params.customerId
-  });`}
-          </Prism>
-        </section>
       </PageContainer>
-      <Chapter
-        items={[
-          { href: "#attach", label: "Attach" },
-          { href: "#retrieve", label: "Retrieve" },
-          { href: "#dettach", label: "Dettach" }
-        ]}
-      />
     </>
   );
 };

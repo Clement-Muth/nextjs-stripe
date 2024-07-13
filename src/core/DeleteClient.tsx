@@ -5,9 +5,10 @@ import deleteClient from "~/app/api/deleteClient";
 
 export interface DeleteClientProps {
   clientId?: string;
+  fullWidth?: boolean;
 }
 
-const DeleteClient = ({ clientId }: DeleteClientProps) => {
+const DeleteClient = ({ clientId, fullWidth }: DeleteClientProps) => {
   return (
     <Button
       color={!clientId ? "default" : "primary"}
@@ -17,6 +18,7 @@ const DeleteClient = ({ clientId }: DeleteClientProps) => {
       onClick={() => {
         clientId && deleteClient(clientId);
       }}
+      fullWidth={fullWidth}
     >
       Delete Client
     </Button>
